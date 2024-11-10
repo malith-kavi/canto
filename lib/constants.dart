@@ -9,11 +9,23 @@ const HeaderText1 = TextStyle(
   height: 1,
   );
 
+const HeaderText2 = TextStyle(
+  color: Color.fromARGB(255, 0, 0, 0), 
+  fontSize: 40, 
+  fontWeight: FontWeight.bold,
+  height: 1,
+  );
+
 const BodyText1 = TextStyle(
   color: Color.fromARGB(255, 255, 255, 255), 
   fontSize: 15,
   height: 1,
   );
 
+const BodyText2 = TextStyle(
+  color: Color.fromARGB(255, 0, 0, 0), 
+  fontSize: 15,
+  height: 1,
+  );
 
   
