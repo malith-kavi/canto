@@ -44,3 +44,58 @@ class CustomButton extends StatelessWidget {
     );
   }
 }
+
+
+class CustomTextInput extends StatelessWidget {
+  final String hintText;
+  final TextEditingController? controller;
+  final bool obscureText;
+  final TextInputType keyboardType;
+  final ValueChanged<String>? onChanged;
+  final double width;
+  final double height;
+
+  const CustomTextInput({
+    Key? key,
+    required this.hintText,
+    this.controller,
+    this.obscureText = false,
+    this.keyboardType = TextInputType.text,
+    this.onChanged,
+    this.width = 300,
+    this.height = 50,
+  }) : super(key: key);
+
+  // Default decoration style for the text field
+  static const textInputDecoration = InputDecoration(
+    hintText: "Enter text",
+    hintStyle: TextStyle(color: Colors.black, fontSize: 15),
+    fillColor: Color.fromARGB(255, 255, 255, 255),
+    filled: true,
+    enabledBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: Color.fromARGB(255, 217, 217, 217)),
+      borderRadius: BorderRadius.all(
+        Radius.circular(8),
+      ),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderSide: BorderSide(color: Color.fromARGB(255, 250, 229, 38)),
+      borderRadius: BorderRadius.all(
+        Radius.circular(8),
+      ),
+    ),
+  );
+
+  @override
+  Widget build(BuildContext context) {
+    return TextFormField(
+      controller: controller,
+      obscureText: obscureText,
+      keyboardType: keyboardType,
+      onChanged: onChanged,
+      decoration: textInputDecoration.copyWith(
+        hintText: hintText,
+      ),
+    );
+  }
+}
