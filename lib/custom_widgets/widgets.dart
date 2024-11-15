@@ -79,7 +79,7 @@ class CustomTextInput extends StatelessWidget {
       ),
     ),
     focusedBorder: OutlineInputBorder(
-      borderSide: BorderSide(color: Color.fromARGB(255, 250, 229, 38)),
+      borderSide: BorderSide(color: Color.fromARGB(255, 253, 223, 81)),
       borderRadius: BorderRadius.all(
         Radius.circular(8),
       ),
