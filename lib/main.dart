@@ -1,3 +1,4 @@
+import 'package:canto/screens/login_screen.dart';
 import 'package:canto/screens/routes_screen.dart';
 import 'package:canto/screens/signup_screen.dart';
 import 'package:canto/screens/splash_screen.dart';
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       //   useMaterial3: true,
       // ),
-      home: SignupScreen(),
+      home: LoginScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
