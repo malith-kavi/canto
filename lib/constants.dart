@@ -24,8 +24,13 @@ const BodyText1 = TextStyle(
 
 const BodyText2 = TextStyle(
   color: Color.fromARGB(255, 0, 0, 0), 
-  fontSize: 15,
+  fontSize: 12,
   height: 1,
+  fontWeight: FontWeight.bold
   );
 
-  
+  const BodyText3 = TextStyle(
+  color: Color.fromARGB(255, 0, 0, 0), 
+  fontSize: 14,
+  height: 1,
+  );
