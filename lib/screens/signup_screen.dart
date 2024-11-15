@@ -4,6 +4,8 @@ import 'package:canto/custom_widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 var logo = 'assets/images/logo.png';
+var google = 'assets/images/google.png';
+var facebook = 'assets/images/facebook.png';
 
 class SignupScreen extends StatelessWidget {
   const SignupScreen({super.key});
@@ -14,25 +16,27 @@ class SignupScreen extends StatelessWidget {
       backgroundColor: bColor,
       body: Column(
         children: [
-          Expanded(
-            flex: 10,
-            child: Container(
-              decoration: const BoxDecoration(
-                color: bColor,
-              ),
-              child: Center(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.all(10),
-                      child: Image.asset(
-                        logo,
-                        width: 250,
-                        height: 250,
+          SafeArea(
+            child: Expanded(
+              flex: 8,
+              child: Container(
+                decoration: const BoxDecoration(
+                  color: bColor,
+                ),
+                child: Center(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.all(1),
+                        child: Image.asset(
+                          logo,
+                          width: 150,
+                          height: 150,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
@@ -64,7 +68,7 @@ class SignupScreen extends StatelessWidget {
               ),
               child:Center(
                 child: Padding(
-                  padding: const EdgeInsets.all(20),
+                  padding: const EdgeInsets.fromLTRB(20, 15, 20, 25),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -74,11 +78,69 @@ class SignupScreen extends StatelessWidget {
                       ),
                       SizedBox(height: 10,),
                       Text('Enter your details here.',
-                      style: BodyText2,),
+                      style: BodyText3,),
+                      SizedBox(height: 10,),
                       
-                      CustomTextInput(hintText: 'hintText')                      
+                      CustomTextInput(hintText: 'Email Address'),
+                      SizedBox(height: 10,),
+                      CustomTextInput(hintText: 'Your Name'),
+                      SizedBox(height: 10,),
+                      CustomTextInput(hintText: 'Password'),
+                      SizedBox(height: 10,),
+                      CustomTextInput(hintText: 'Confirm Password'),
+                      Spacer(),
+                      CustomButton(text: 'Sign Up', onPressed: (){}),
+                      SizedBox(height: 15,),
+                      Row(
+                        children: [
+                          
+                          Expanded(
+                            child: Divider(
+                              color: Colors.black54, 
+                              thickness: 1.5, 
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                            child: Text(
+                              'Or SignUp with',
+                              style: BodyText2
+                            ),
+                          ),
+                          
+                          Expanded(
+                            child: Divider(
+                              color: Colors.black54, 
+                              thickness: 1.5,
+                            ),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Spacer(),
+                          IconButton(
+                            icon: Image.asset(
+                              facebook,
+                              height: 50,
+                              width: 50,
+                            ),
+                            onPressed: () {},
+                          ),
+                          Spacer(),
+                          IconButton(
+                            icon: Image.asset(
+                              google,
+                              height: 50,
+                              width: 50,
+                            ),
+                            onPressed: () {},
+                          ),
+                          Spacer(),
+                        ],
+                      ),
 
-                      
                     ],
                   ),
                 ),
