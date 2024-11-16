@@ -64,6 +64,7 @@ flutter:
      - assets/images/routes_bg.png
      - assets/images/google.png
      - assets/images/facebook.png
+     - assets/images/stBackground.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
