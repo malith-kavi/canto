@@ -3,6 +3,7 @@ import 'package:canto/screens/routes_screen.dart';
 import 'package:canto/screens/signup_screen.dart';
 import 'package:canto/screens/splash_screen.dart';
 import 'package:canto/screens/student_dashboard.dart';
+import 'package:canto/screens/student_menu.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -21,7 +22,7 @@ class MyApp extends StatelessWidget {
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       //   useMaterial3: true,
       // ),
-      home: StudentDashboard(),
+      home: StudentMenu(),
       debugShowCheckedModeBanner: false,
     );
   }
