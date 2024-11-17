@@ -177,3 +177,37 @@ class MenuButton1 extends StatelessWidget {
     );
   }
 }
+
+class CustomSearchBar extends StatelessWidget {
+  final TextEditingController _searchController = TextEditingController();
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.only(top: 10.0, bottom: 10.0,),
+      child: Container(
+        decoration: BoxDecoration(
+          color: Color.fromARGB(255, 217, 217, 217),
+          borderRadius: BorderRadius.circular(20.0),
+          // border: Border.all(
+          //   color: Colors.grey, // Border color
+          //   width: 1.0,         // Border width
+          // ),
+        ),
+        child: TextField(
+          controller: _searchController,
+          decoration: InputDecoration(
+            hintText: "Search",
+            suffixIcon: Icon(Icons.search, color: Color.fromARGB(255, 255, 199, 0),), // Search icon
+            border: InputBorder.none, // Removes the default border
+            contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
+          ),
+          onChanged: (value) {
+            // Perform search action here
+            print("Searching for: $value");
+          },
+        ),
+      ),
+    );
+  }
+}
