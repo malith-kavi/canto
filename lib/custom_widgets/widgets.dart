@@ -143,3 +143,37 @@ class CustomCard extends StatelessWidget {
     );
   }
 }
+
+class MenuButton1 extends StatelessWidget {
+  final String text;
+  final VoidCallback onPressed;
+
+  const MenuButton1({required this.text, required this.onPressed, super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 30.0,
+      child: TextButton(
+        onPressed: onPressed,
+        style: TextButton.styleFrom(
+          backgroundColor: Color.fromARGB(255, 255, 193, 7),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10.0),
+            side: BorderSide(
+              color: Colors.black,
+            )
+          ),
+        ),
+        child: Text(
+          text,
+          style: const TextStyle(
+            color: Color.fromARGB(255, 0, 0, 0),
+            fontSize: 12.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+}
