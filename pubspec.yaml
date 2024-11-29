@@ -69,6 +69,9 @@ flutter:
      - assets/images/rice.png
      - assets/images/riceCurry.png
      - assets/images/samosa.png
+     - assets/images/cool.png
+     - assets/images/iceCream.png
+     - assets/images/juice.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
