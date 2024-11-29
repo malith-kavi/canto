@@ -147,9 +147,15 @@ class CustomCard extends StatelessWidget {
 
 class MenuButton1 extends StatelessWidget {
   final String text;
+  final bool isSelected;
   final VoidCallback onPressed;
 
-  const MenuButton1({required this.text, required this.onPressed, super.key});
+  const MenuButton1({
+    required this.text, 
+    required this.onPressed,
+    this.isSelected = false, 
+    super.key
+    });
 
   @override
   Widget build(BuildContext context) {
@@ -158,7 +164,8 @@ class MenuButton1 extends StatelessWidget {
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
-          backgroundColor: Color.fromARGB(255, 255, 193, 7),
+          backgroundColor:
+          isSelected ? Color.fromARGB(255, 255, 193, 7) : Colors.white,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(10.0),
             side: BorderSide(
@@ -307,8 +314,8 @@ class MenuCard extends StatelessWidget {
               Image.asset(
                 image,
                 height: 120,
-                width: 100,
-                //fit: BoxFit.contain,
+                width: 120,
+                fit: BoxFit.contain,
               ),
               const SizedBox(height: 10),
               Text(
@@ -317,6 +324,71 @@ class MenuCard extends StatelessWidget {
                   fontSize: 11,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class MenuCard2 extends StatelessWidget {
+  final String image;
+  final String text;
+  final String price;
+  final VoidCallback onTap;
+  final double width;
+  final double height;
+
+  const MenuCard2({
+    Key? key,
+    required this.image,
+    required this.text,
+    required this.onTap,
+    required this.price,
+    this.width = 120,
+    this.height = 150,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        elevation: 5,
+        color: Colors.black,
+        
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+              Image.asset(
+                image,
+                height: 110,
+                width: 120,
+                fit: BoxFit.contain,
+              ),
+              const SizedBox(height: 10),
+              Text(
+                'RS.'+ price,
+                style: const TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.bold,
+                  color: mainColor,
                 ),
               ),
             ],
