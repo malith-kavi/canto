@@ -65,6 +65,10 @@ flutter:
      - assets/images/google.png
      - assets/images/facebook.png
      - assets/images/stBackground.png
+     - assets/images/foodPlate.png
+     - assets/images/rice.png
+     - assets/images/riceCurry.png
+     - assets/images/samosa.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
