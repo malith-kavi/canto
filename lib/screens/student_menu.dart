@@ -6,9 +6,20 @@ var foodplate = 'assets/images/foodPlate.png';
 var rice = 'assets/images/rice.png';
 var riceCurry = 'assets/images/riceCurry.png';
 var samosa = 'assets/images/samosa.png';
+var cool = 'assets/images/cool.png';
+var iceCream = 'assets/images/iceCream.png';
+var juice = 'assets/images/juice.png';
 
-class StudentMenu extends StatelessWidget {
+class StudentMenu extends StatefulWidget {
   const StudentMenu({super.key});
+
+  @override
+  State<StudentMenu> createState() => _StudentMenuState();
+}
+
+class _StudentMenuState extends State<StudentMenu> {
+
+  String selectedCategory = 'All';
 
   @override
   Widget build(BuildContext context) {
@@ -31,13 +42,42 @@ class StudentMenu extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Spacer(),
-                    MenuButton1(text: 'All', onPressed: (){}),
+                    MenuButton1(
+                      text: 'All', 
+                      isSelected: selectedCategory == 'All',
+                      onPressed: (){
+                        setState(() {
+                          selectedCategory = 'All';
+                        });
+                      }
+                      ),
                     Spacer(),
-                    MenuButton1(text: 'Breakfast', onPressed: (){}),
+                    MenuButton1(
+                      text: 'Breakfast', 
+                      isSelected: selectedCategory == 'Breakfast',
+                      onPressed: (){
+                        setState(() {
+                          selectedCategory = 'Breakfast';
+                        });
+                      }),
                     Spacer(),
-                    MenuButton1(text: 'Lunch', onPressed: (){}),
+                    MenuButton1(
+                      text: 'Lunch',
+                      isSelected: selectedCategory == 'Lunch', 
+                      onPressed: (){
+                        setState(() {
+                          selectedCategory = 'Lunch';
+                        });
+                      }),
                     Spacer(),
-                    MenuButton1(text: 'Dinner', onPressed: (){}),
+                    MenuButton1(
+                      text: 'Dinner',
+                      isSelected: selectedCategory == 'Dinner', 
+                      onPressed: (){
+                        setState(() {
+                          selectedCategory = 'Dinner';
+                        });
+                      }),
                     Spacer(),
                   ],
                 ),
@@ -82,11 +122,11 @@ class StudentMenu extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      MenuCard(image: riceCurry, text: 'Rice with Chicken', onTap: (){}),
+                      MenuCard2(image: juice, text: 'Fresh Juice', price: '50', onTap: (){}),
                       SizedBox(width: 20,),
-                      MenuCard(image: rice, text: 'Kottu', onTap: (){}),
+                      MenuCard2(image: iceCream, text: 'Ice-Cream', price: '120', onTap: (){}),
                       SizedBox(width: 20,),
-                      MenuCard(image: samosa, text: 'Samosa', onTap: (){}),
+                      MenuCard2(image: cool, text: 'Cool Drinks', price: '100', onTap: (){}),
                     ],
                   ),
                 ),
