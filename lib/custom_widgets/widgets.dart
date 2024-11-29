@@ -1,3 +1,4 @@
+import 'package:canto/constants.dart';
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
@@ -189,23 +190,137 @@ class CustomSearchBar extends StatelessWidget {
         decoration: BoxDecoration(
           color: Color.fromARGB(255, 217, 217, 217),
           borderRadius: BorderRadius.circular(20.0),
-          // border: Border.all(
-          //   color: Colors.grey, // Border color
-          //   width: 1.0,         // Border width
-          // ),
         ),
         child: TextField(
           controller: _searchController,
           decoration: InputDecoration(
             hintText: "Search",
             suffixIcon: Icon(Icons.search, color: Color.fromARGB(255, 255, 199, 0),), // Search icon
-            border: InputBorder.none, // Removes the default border
+            border: InputBorder.none,
             contentPadding: EdgeInsets.symmetric(vertical: 10.0, horizontal: 16.0),
           ),
           onChanged: (value) {
-            // Perform search action here
+            
             print("Searching for: $value");
           },
+        ),
+      ),
+    );
+  }
+}
+
+class PCard extends StatelessWidget {
+  final String heading;
+  final String meal;
+  final String description;
+  final String img;
+  final VoidCallback onTap;
+  const PCard({required this.heading, required this.meal, required this.description, required this.img,required this.onTap});
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+        child: Container(
+          height: 130,
+          decoration: BoxDecoration(
+            color: mainColor,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(15.0),
+            child: Row(
+              children: [
+                Expanded(
+                    child: Row(
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          mainAxisAlignment: MainAxisAlignment.start,
+                          children: [
+                            Spacer(),
+                            Text(heading,
+                              style: BodyText4
+                            ),
+                            Spacer(),
+                            Text(meal, style: HeaderText3,),
+                            Spacer(),
+                            Text(description,style: BodyText3,),
+                            Spacer(),
+                          ],
+                        ),
+                        Spacer(),
+                        Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Image.asset(
+                              img,
+                              width: 120,
+                              height: 80,
+                            ),
+                          ]
+                        ),
+                      ],
+                    ),
+                  
+                ),
+                const SizedBox(width: 10),
+              ],
+            ),
+          ),
+        ),
+    );
+  }
+}
+
+class MenuCard extends StatelessWidget {
+  final String image;
+  final String text;
+  final VoidCallback onTap;
+  final double width;
+  final double height;
+
+  const MenuCard({
+    Key? key,
+    required this.image,
+    required this.text,
+    required this.onTap,
+    this.width = 120,
+    this.height = 150,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+        ),
+        elevation: 5,
+        color: Colors.black,
+        
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                image,
+                height: 120,
+                width: 100,
+                //fit: BoxFit.contain,
+              ),
+              const SizedBox(height: 10),
+              Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 11,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );
