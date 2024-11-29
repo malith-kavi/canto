@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const bColor = Color.fromARGB(255, 30, 30, 30);
+const mainColor = Color.fromARGB(255, 255, 193, 7);
 
 const HeaderText1 = TextStyle(
   color: Color.fromARGB(255, 255, 255, 255), 
@@ -12,6 +13,13 @@ const HeaderText1 = TextStyle(
 const HeaderText2 = TextStyle(
   color: Color.fromARGB(255, 0, 0, 0), 
   fontSize: 40, 
+  fontWeight: FontWeight.bold,
+  height: 1,
+  );
+
+const HeaderText3 = TextStyle(
+  color: Color.fromARGB(255, 0, 0, 0), 
+  fontSize: 20, 
   fontWeight: FontWeight.bold,
   height: 1,
   );
@@ -32,5 +40,11 @@ const BodyText2 = TextStyle(
   const BodyText3 = TextStyle(
   color: Color.fromARGB(255, 0, 0, 0), 
   fontSize: 14,
+  height: 1,
+  );
+
+  const BodyText4 = TextStyle(
+  color: Color.fromARGB(255, 0, 0, 0), 
+  fontSize: 16,
   height: 1,
   );
