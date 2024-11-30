@@ -130,27 +130,11 @@ class _FoodDetailsScreenState extends State<FoodDetailsScreen> {
                       ],
                     ),
                     const Spacer(),
-                    // Add to cart button
-                    Center(
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.amber,
-                          padding: const EdgeInsets.symmetric(
-                              horizontal: 120, vertical: 15),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
-                        ),
-                        onPressed: () {},
-                        child: const Text(
-                          'Add to cart',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
-                      ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        CustomButton2(text: 'Add to Cart', onPressed: (){}),
+                      ],
                     ),
                   ],
                 ),
