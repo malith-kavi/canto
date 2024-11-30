@@ -398,3 +398,52 @@ class MenuCard2 extends StatelessWidget {
     );
   }
 }
+
+class ExtraCard extends StatelessWidget {
+  final String image;
+  final String label;
+  final bool isSelected;
+  final VoidCallback onTap;
+
+  const ExtraCard({
+    required this.image,
+    required this.label,
+    this.isSelected = false,
+    required this.onTap,
+    super.key
+  });
+  
+
+  @override
+
+  Widget build(BuildContext context){
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        width: 100,
+        height: 120,
+        padding: const EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: isSelected ? Color.fromARGB(255, 255, 193, 7) : Colors.grey[200],
+          borderRadius: BorderRadius.circular(10),
+        ),
+        child: Column(
+          children: [
+            Image.asset(
+              image,
+              height: 50,
+              width: 50,
+              fit: BoxFit.cover,
+            ),
+            const SizedBox(height: 5),
+            Text(
+              label,
+              textAlign: TextAlign.center,
+              style: const TextStyle(fontSize: 12),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
