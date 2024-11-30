@@ -420,8 +420,8 @@ class ExtraCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 100,
-        height: 120,
+        width: 120,
+        height: 140,
         padding: const EdgeInsets.all(10),
         decoration: BoxDecoration(
           color: isSelected ? Color.fromARGB(255, 255, 193, 7) : Colors.grey[200],
@@ -429,19 +429,60 @@ class ExtraCard extends StatelessWidget {
         ),
         child: Column(
           children: [
+            Spacer(),
             Image.asset(
               image,
-              height: 50,
-              width: 50,
-              fit: BoxFit.cover,
+              height: 60,
+              width: 100,
+              fit: BoxFit.fill,
             ),
-            const SizedBox(height: 5),
+            const SizedBox(height: 20),
             Text(
               label,
               textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 12),
+              style: TextStyle(fontSize: 12,fontWeight: FontWeight.bold),
+              
             ),
+            Spacer(),
           ],
+        ),
+      ),
+    );
+  }
+}
+
+class CustomButton2 extends StatelessWidget {
+  final String text;
+  final VoidCallback onPressed;
+
+  const CustomButton2({
+    required this.text, 
+    required this.onPressed, 
+    super.key
+    });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 335.0,
+      height: 65.0,
+
+      child: TextButton(
+        onPressed: onPressed,
+        style: TextButton.styleFrom(
+          backgroundColor: mainColor,
+          
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(8.0),
+          ),
+        ),
+        child: Text(
+          text,
+          style: const TextStyle(
+            color: Color.fromARGB(255, 0, 0, 0),
+            fontSize: 22.0,
+            fontWeight: FontWeight.bold,
+          ),
         ),
       ),
     );
