@@ -488,3 +488,118 @@ class CustomButton2 extends StatelessWidget {
     );
   }
 }
+
+class CartCard extends StatefulWidget {
+  final String meal;
+  final String price;
+  final String img;
+
+  const CartCard({
+    required this.meal,
+    required this.price,
+    required this.img,
+    super.key,
+  });
+
+  @override
+  State<CartCard> createState() => _CartCardState();
+}
+
+class _CartCardState extends State<CartCard> {
+  int count = 1;
+  
+  void increaseCount() {
+    setState(() {
+      count++;
+    });
+  }
+
+  void decreaseCount() {
+    if (count > 1) {
+      setState(() {
+        count--;
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox( 
+      height: 150,
+      width: 340,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.transparent, 
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: Row(
+            children: [
+              
+              ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  widget.img,
+                  width: 120,
+                  height: 90,
+                  fit: BoxFit.cover,
+                ),
+              ),
+              const SizedBox(width: 10),
+              
+              Expanded( 
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      widget.meal,
+                      style: HeaderText3,
+                    ),
+                    Text(
+                      'RS.' + widget.price,
+                      style: const TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey,
+                      ),
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+
+                      children: [
+                        IconButton(
+                          onPressed: decreaseCount,
+                          icon: const Icon(
+                            Icons.remove,
+                            color: Colors.red,
+                          ),
+                        ),
+                        Text(
+                          '$count',
+                          style: TextStyle(fontSize: 16),
+                        ),
+                        IconButton(
+                          onPressed: increaseCount,
+                          icon: const Icon(
+                            Icons.add,
+                            color: Colors.green,
+                          ),
+                        ),
+                        Spacer(),
+                        IconButton(
+                          onPressed: () {},
+                          icon: Icon(Icons.delete_sweep_outlined),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
