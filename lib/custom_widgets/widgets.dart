@@ -603,3 +603,233 @@ class _CartCardState extends State<CartCard> {
     );
   }
 }
+
+class NotificationCard extends StatelessWidget {
+  final String name;
+  final String price;
+  final String date;
+
+  const NotificationCard({
+    required this.name, 
+    required this.price, 
+    required this.date,
+    });
+  
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox( 
+      height: 80,
+      width: 350,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white, 
+          borderRadius: BorderRadius.circular(2),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: Row(
+            children: [
+              SizedBox(width: 20,),
+              
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  shape: BoxShape.circle,
+                  ),
+                child: Icon(
+                  Icons.notifications_active,
+                  color: Colors.black,
+                  ),
+              ),
+              const SizedBox(width: 20),
+              
+              Expanded( 
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      name,
+                      style: BodyText4,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(date,
+                        style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                          ),
+                        ),
+
+                        SizedBox(width: 10,),
+                        
+                        Text(
+                          'RS.' + price + ' Token',
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                    
+                  ],
+                ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.delete_sweep_outlined),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class ProfileField extends StatelessWidget {
+  final IconData icon;
+  final String text;
+  final IconData? trailingIcon;
+
+  const ProfileField({
+    Key? key,
+    required this.icon,
+    required this.text,
+    this.trailingIcon,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 12.0),
+      decoration: BoxDecoration(
+        border: Border.all(color: Colors.black),
+        borderRadius: BorderRadius.circular(30.0),
+      ),
+      child: Row(
+        children: [
+          Icon(icon, color: Colors.black),
+          const SizedBox(width: 16),
+          Expanded(
+            child: Text(
+              text,
+              style: const TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          if (trailingIcon != null)
+            Icon(trailingIcon, color: Colors.black),
+        ],
+      ),
+    );
+  }
+}
+
+class SettingsCard extends StatelessWidget {
+  final String name;
+  final IconData icon;
+  final VoidCallback onTap;
+
+  const SettingsCard({
+    Key? key,
+    required this.name, 
+    required this.icon, 
+    required this. onTap,
+    }) : super(key: key);
+  
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox( 
+        height: 80,
+        width: 350,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.transparent, 
+            borderRadius: BorderRadius.circular(2),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(2.0),
+            child: Row(
+              children: [
+                SizedBox(width: 20,),
+                
+                Icon(icon,
+                  color: Colors.white,
+                ),
+                
+                const SizedBox(width: 20),
+      
+                Text(name,style: BodyText6,)
+              
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class SettingsCard2 extends StatelessWidget {
+  final String name;
+  final IconData icon;
+  final VoidCallback onTap;
+
+  const SettingsCard2({
+    Key? key,
+    required this.name, 
+    required this.icon, 
+    required this. onTap,
+    }) : super(key: key);
+  
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: onTap,
+      child: SizedBox( 
+        height: 80,
+        width: 350,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.transparent, 
+            borderRadius: BorderRadius.circular(2),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(2.0),
+            child: Row(
+              children: [
+                SizedBox(width: 20,),
+                
+                Icon(icon,
+                  color: mainColor,
+                ),
+                
+                const SizedBox(width: 20),
+      
+                Text(
+                  name,
+                  style: BodyText7,
+                  )
+              
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
