@@ -54,3 +54,17 @@ const BodyText2 = TextStyle(
   fontWeight: FontWeight.bold,
   height: 1,
   );
+
+  const BodyText6 = TextStyle(
+  color: Color.fromARGB(255, 255, 255, 255), 
+  fontSize: 25,
+  height: 1,
+  fontWeight: FontWeight.bold,
+  );
+
+  const BodyText7 = TextStyle(
+  color: mainColor, 
+  fontSize: 20,
+  height: 1,
+  fontWeight: FontWeight.bold,
+  );
