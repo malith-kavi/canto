@@ -834,3 +834,309 @@ class SettingsCard2 extends StatelessWidget {
   }
 }
 
+class FeedbackCard extends StatelessWidget {
+
+  final String name;
+  final String quality;
+  final String date;
+
+  const FeedbackCard({
+    required this.name, 
+    required this.quality, 
+    required this.date,
+    });
+  
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox( 
+      height: 80,
+      width: 350,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white, 
+          borderRadius: BorderRadius.circular(2),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: Row(
+            children: [
+              SizedBox(width: 20,),
+              
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  shape: BoxShape.circle,
+                  ),
+                child: Icon(
+                  Icons.person,
+                  color: Colors.black,
+                  ),
+              ),
+              const SizedBox(width: 20),
+              
+              Expanded( 
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      name,
+                      style: BodyText4,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+
+                        
+                        Text(
+                          quality,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
+                          ),
+                        ),
+                      ],
+                    ),
+                    
+                  ],
+                ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  Text(
+                    date,
+                    style: const TextStyle(
+                    fontSize: 14,
+                    color: Colors.grey,
+                    ),
+                  ),
+                  
+                  IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.delete_sweep_outlined),
+                  ),
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class TokenCard extends StatelessWidget {
+  final String orderNumber;
+  final String food;
+  final String price;
+
+  const TokenCard({
+    required this.orderNumber, 
+    required this.food, 
+    required this.price,
+    });
+  
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox( 
+      height: 80,
+      width: 350,
+      child: Container(
+        decoration: BoxDecoration(
+          color: custYellow, 
+          borderRadius: BorderRadius.circular(2),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: Row(
+            children: [
+              SizedBox(width: 20,),
+              
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  ),
+                child: Icon(
+                  Icons.person,
+                  color: Colors.black,
+                  ),
+              ),
+              const SizedBox(width: 20),
+              
+              Expanded( 
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  children: [
+                    Text(
+                      orderNumber,
+                      style: BodyText5,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+
+                        Text(
+                          food,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                        ),
+                        SizedBox(width: 5,),
+                        Text(
+                          'Rs.'+price,
+                          style: const TextStyle(
+                            fontSize: 14,
+                            color: Color.fromARGB(255, 0, 0, 0),
+                          ),
+                        ),
+                      ],
+                    ),
+                    
+                  ],
+                ),
+              ),
+              Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  TextButton(
+                    onPressed: (){}, 
+                    style: TextButton.styleFrom(
+                      padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                      minimumSize: Size(20, 20),
+                      backgroundColor: Colors.transparent,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(8),
+                      ),
+                    ),
+                    child: Text(
+                      'View',
+                      style: TextStyle(
+                        fontSize: 12.0, 
+                        color: Colors.grey,
+                        ),
+                    ),
+                  ),    
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CustomButton3 extends StatelessWidget {
+  final String text;
+  final VoidCallback onPressed;
+
+  const CustomButton3({
+    required this.text, 
+    required this.onPressed, 
+    super.key
+    });
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      width: 150.0,
+      height: 50.0,
+
+      child: TextButton(
+        onPressed: onPressed,
+        style: TextButton.styleFrom(
+          backgroundColor: mainColor,
+          
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(4.0),
+          ),
+        ),
+        child: Text(
+          text,
+          style: const TextStyle(
+            color: Color.fromARGB(255, 255, 255, 255),
+            fontSize: 20.0,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class AdminCard extends StatelessWidget {
+  final String name;
+
+  const AdminCard({
+    required this.name, 
+    });
+  
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox( 
+      height: 80,
+      width: 350,
+      child: Container(
+        decoration: BoxDecoration(
+          color: Colors.white, 
+          borderRadius: BorderRadius.circular(2),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(2.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              SizedBox(width: 20,),
+              
+              Container(
+                width: 40,
+                height: 40,
+                decoration: BoxDecoration(
+                  color: Colors.yellow,
+                  shape: BoxShape.circle,
+                  ),
+                child: Icon(
+                  Icons.person,
+                  color: Colors.black,
+                  ),
+              ),
+              const SizedBox(width: 20),
+              Text(
+              name,
+              style: BodyText5,
+              ),
+              Spacer(),
+              TextButton(
+                onPressed: (){}, 
+                style: TextButton.styleFrom(
+                  padding: EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  minimumSize: Size(20, 20),
+                  backgroundColor: Colors.transparent,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                ),
+                child: Text(
+                  'View',
+                  style: TextStyle(
+                    fontSize: 12.0, 
+                    color: Colors.grey,
+                  ),
+                ),
+              ),
+              SizedBox(width: 10,),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
