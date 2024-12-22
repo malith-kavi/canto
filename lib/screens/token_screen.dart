@@ -2,12 +2,6 @@ import 'package:canto/constants.dart';
 import 'package:canto/custom_widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
-var kottu = 'assets/images/kottu.png';
-var riceCurry = 'assets/images/riceCurry.png';
-var samosa = 'assets/images/samosa.png';
-var cool = 'assets/images/cool.png';
-var iceCream = 'assets/images/iceCream.png';
-var juice = 'assets/images/juice.png';
 
 class TokenScreen extends StatelessWidget {
   const TokenScreen({Key? key}) : super(key: key);
@@ -65,7 +59,7 @@ class TokenScreen extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.start,
                         children: [
-                          Text('date',style: BodyText4,),
+                          Text('Date',style: BodyText4,),
                           Spacer(),
                           Text('30 Octomber 2024',style: BodyText5,),
                         ],
