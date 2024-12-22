@@ -1,3 +1,7 @@
+import 'package:canto/screens/canteen_dashboard.dart';
+import 'package:canto/screens/canteen_food_add.dart';
+import 'package:canto/screens/canteen_food_screen.dart';
+import 'package:canto/screens/canteen_menu.dart';
 import 'package:canto/screens/cart_screen.dart';
 import 'package:canto/screens/food_screen.dart';
 import 'package:canto/screens/login_screen.dart';
@@ -28,7 +32,7 @@ class MyApp extends StatelessWidget {
       //   colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
       //   useMaterial3: true,
       // ),
-      home: StudentSettingsScreen(),
+      home: CanteenFoodAddScreen(),
       debugShowCheckedModeBanner: false,
     );
   }
