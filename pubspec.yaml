@@ -30,6 +30,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  image_picker: ^0.8.7+4
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -75,7 +76,7 @@ flutter:
      - assets/images/kottu.png
      - assets/images/tomato.png
      - assets/images/gravy.png
-
+     - assets/images/ctBackground.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
