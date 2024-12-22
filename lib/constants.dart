@@ -24,6 +24,14 @@ const HeaderText3 = TextStyle(
   height: 1,
   );
 
+  const HeaderText4 = TextStyle(
+  color: mainColor, 
+  fontSize: 40, 
+  fontWeight: FontWeight.bold,
+  height: 1,
+  );
+
+
 const BodyText1 = TextStyle(
   color: Color.fromARGB(255, 255, 255, 255), 
   fontSize: 15,
