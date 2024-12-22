@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 const bColor = Color.fromARGB(255, 30, 30, 30);
 const mainColor = Color.fromARGB(255, 255, 193, 7);
+const custYellow = Color.fromARGB(255, 253, 223, 81);
 
 const HeaderText1 = TextStyle(
   color: Color.fromARGB(255, 255, 255, 255), 
