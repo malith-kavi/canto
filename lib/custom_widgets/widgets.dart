@@ -833,3 +833,4 @@ class SettingsCard2 extends StatelessWidget {
     );
   }
 }
+
