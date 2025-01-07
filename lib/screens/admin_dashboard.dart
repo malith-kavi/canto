@@ -1,5 +1,13 @@
 import 'package:canto/constants.dart';
 import 'package:canto/custom_widgets/widgets.dart';
+import 'package:canto/screens/admin_canteen_staff.dart';
+import 'package:canto/screens/admin_profile_screen.dart';
+import 'package:canto/screens/admin_settings_screen.dart';
+import 'package:canto/screens/admin_student.dart';
+import 'package:canto/screens/canteen_message.dart';
+import 'package:canto/screens/feedback_screen.dart';
+import 'package:canto/screens/student_menu.dart';
+import 'package:canto/screens/student_profile.dart';
 import 'package:flutter/material.dart';
 
 var adbackground = 'assets/images/adBackground.png';
@@ -69,49 +77,65 @@ class AdminDashboard extends StatelessWidget {
                       CustomCard(
                         icon: Icons.book_rounded, 
                         text: 'Menu', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> StudentMenu()));
+                        },
                       ),
 
                       CustomCard(
                         icon: Icons.generating_tokens_rounded, 
                         text: 'Tokens', 
-                        onTap: (){},
+                        onTap: (){
+                          
+                        },
                       ),
 
                       CustomCard(
                         icon: Icons.message, 
                         text: 'Message', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> CanteenMessageScreen()));
+                        },
                       ),
 
                       CustomCard(
                         icon: Icons.feedback, 
                         text: 'Feedback', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> FeedbackScreen()));
+                        },
                       ),
 
                       CustomCard(
                         icon: Icons.school_rounded, 
                         text: 'Students', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> AdminStudent()));
+                        },
                       ),
                       
                       CustomCard(
                         icon: Icons.food_bank_rounded, 
                         text: 'Canteen Staff', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> AdminCanteenStaff()));
+                        },
                       ),
 
                       CustomCard(
                         icon: Icons.manage_accounts_rounded, 
                         text: 'Profile', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> AdminProfileScreen()));
+                        },
                       ),
                       
                       CustomCard(
                         icon: Icons.settings, 
                         text: 'Settings', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> AdminSettingsScreen()));
+                        },
                       ),
 
                     ],
