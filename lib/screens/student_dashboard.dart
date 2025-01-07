@@ -1,5 +1,11 @@
 import 'package:canto/constants.dart';
 import 'package:canto/custom_widgets/widgets.dart';
+import 'package:canto/screens/cart_screen.dart';
+import 'package:canto/screens/notification_screen.dart';
+import 'package:canto/screens/student_menu.dart';
+import 'package:canto/screens/student_profile.dart';
+import 'package:canto/screens/student_settings_screen.dart';
+import 'package:canto/screens/student_tokens_screen.dart';
 import 'package:flutter/material.dart';
 
 var stbackground = 'assets/images/stBackground.png';
@@ -69,37 +75,49 @@ class StudentDashboard extends StatelessWidget {
                       CustomCard(
                         icon: Icons.book_rounded, 
                         text: 'Menu', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> StudentMenu()));
+                        },
                       ),
 
                       CustomCard(
                         icon: Icons.generating_tokens_rounded, 
                         text: 'Tokens', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> StudentTokensScreen()));
+                        },
                       ),
 
                       CustomCard(
                         icon: Icons.shopping_cart_checkout_rounded, 
                         text: 'Cart', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> CartScreen()));
+                        },
                       ),
 
                       CustomCard(
                         icon: Icons.notifications_active_rounded, 
                         text: 'Notifications', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> NotificationScreen()));
+                        },
                       ),
 
                       CustomCard(
                         icon: Icons.manage_accounts_rounded, 
                         text: 'Profile', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> StudentProfile()));
+                        },
                       ),
                       
                       CustomCard(
                         icon: Icons.settings, 
                         text: 'Settings', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> StudentSettingsScreen()));
+                        },
                       ),
 
                     ],

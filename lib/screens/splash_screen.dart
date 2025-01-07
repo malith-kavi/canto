@@ -1,5 +1,6 @@
 import 'package:canto/screens/routes_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 var logo = 'assets/images/logo.png';
 
@@ -34,7 +35,12 @@ class SplashScreen extends StatelessWidget {
                   width: 250,
                   height: 250,
                 ),
+                
               ),
+              const SpinKitChasingDots(
+                  color: Colors.black,
+                  size: 40,
+                )
             ],
           ),
         ),
