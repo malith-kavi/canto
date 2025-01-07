@@ -1,5 +1,10 @@
 import 'package:canto/constants.dart';
 import 'package:canto/custom_widgets/widgets.dart';
+import 'package:canto/screens/canteen_menu.dart';
+import 'package:canto/screens/canteen_message.dart';
+import 'package:canto/screens/canteen_profile.dart';
+import 'package:canto/screens/canteen_settings.dart';
+import 'package:canto/screens/feedback_screen.dart';
 import 'package:flutter/material.dart';
 
 var ctbackground = 'assets/images/ctBackground.png';
@@ -69,7 +74,9 @@ class CanteenDashboard extends StatelessWidget {
                       CustomCard(
                         icon: Icons.book_rounded, 
                         text: 'Menu', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> CanteenMenu()));
+                        },
                       ),
 
                       CustomCard(
@@ -81,25 +88,33 @@ class CanteenDashboard extends StatelessWidget {
                       CustomCard(
                         icon: Icons.message, 
                         text: 'Message', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> CanteenMessageScreen()));
+                        },
                       ),
 
                       CustomCard(
                         icon: Icons.feedback, 
                         text: 'Feedback', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> FeedbackScreen()));
+                        },
                       ),
 
                       CustomCard(
                         icon: Icons.manage_accounts_rounded, 
                         text: 'Profile', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> CanteenProfile()));
+                        },
                       ),
                       
                       CustomCard(
                         icon: Icons.settings, 
                         text: 'Settings', 
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=> CanteenSettingsScreen()));
+                        },
                       ),
 
                     ],
